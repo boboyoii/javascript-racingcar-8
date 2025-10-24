@@ -42,10 +42,10 @@
 
 ### Validator
 
-- [ ] `validateCarNames()` : 자동차 이름이 올바르게 입력되었는지 확인하는 기능
-- [ ] `validateNonEmptyName()` : 자동차 이름이 비어 있지 않은지 검증하는 기능 (구분자 앞뒤 비어 있는 경우 포함)
-- [ ] `validateNameLength()` : 자동차 이름이 5자 이하인지 검증하는 기능
-- [ ] `validateNoWhitespace()` : 자동차 이름 안에 공백 문자가 포함되어 있지 않은지 검증하는 기능
+- [x] `validateCarNames(names)` : 자동차 이름이 올바르게 입력되었는지 확인하는 기능
+- [x] `isEmpty(names)` : 자동차 이름 중 비어 있는 값이 하나라도 있는지 확인하는 기능 (구분자 앞뒤가 비어 있는 경우 포함)
+- [x] `isInvalidLength(names)` : 자동차 이름 중 5자를 초과한 값이 있는지 확인하는 기능
+- [x] `hasWhitespace(names)` : 자동차 이름 중 공백 문자가 포함된 값이 있는지 확인하는 기능
 - [ ] `validateIsNumber()` : 입력된 시도 횟수가 양의 정수인지 검증하는 기능
 
 ### GameView
@@ -57,13 +57,13 @@
 
 ### GameService
 
-- `setCars()` : 검증된 이름으로 자동차 객체들을 생성하는 기능
-- `setRoundCount()` : 진행할 라운드 수를 저장하는 기능
-- `playRound()` : 한 라운드를 진행하는 기능
+- [ ] `setCars()` : 검증된 이름으로 자동차 객체들을 생성하는 기능
+- [ ] `setRoundCount()` : 진행할 라운드 수를 저장하는 기능
+- [ ] `playRound()` : 한 라운드를 진행하는 기능
   - 각 자동차가 0~9 사이의 랜덤 값을 뽑는다.
   - 값이 4 이상이면 한 칸 전진시킨다.
-- `isFinished()` : 모든 라운드가 종료되었는지 확인하는 기능
-- `getWinners()` : 가장 멀리 이동한 자동차 이름을 반환하는 기능
+- [ ] `isFinished()` : 모든 라운드가 종료되었는지 확인하는 기능
+- [ ] `getWinners()` : 가장 멀리 이동한 자동차 이름을 반환하는 기능
 
 ### GameManager
 
