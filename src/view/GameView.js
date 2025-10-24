@@ -12,6 +12,16 @@ class GameView {
     const input = await Console.readLineAsync("시도할 횟수는 몇 회인가요?\n");
     return input;
   }
+
+  printRoundResult(roundResult) {
+    const { round, cars } = roundResult;
+    if (round === 1) Console.print("\n실행결과");
+
+    const result = cars.map(
+      (car) => `${car.getName()} : ${"-".repeat(car.getPosition())}`
+    );
+    Console.print(`${result.join("\n")}\n`);
+  }
 }
 
 export default GameView;

@@ -29,6 +29,11 @@ class GameService {
         car.advance();
       }
     });
+
+    return {
+      round: this.currentRound,
+      cars: this.cars,
+    };
   }
 }
 
