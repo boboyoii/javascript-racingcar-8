@@ -19,6 +19,19 @@ const validator = {
     if (this.hasWhitespace(names))
       throw new Error("[ERROR] 이름에 공백이 포함될 수 없습니다.");
   },
+
+  isNotPositiveInteger(count) {
+    return (
+      Number.isNaN(count) ||
+      !Number.isInteger(Number(count)) ||
+      Number(count) <= 0
+    );
+  },
+
+  validateRoundCount(count) {
+    if (this.isNotPositiveInteger(count))
+      throw new Error("[ERROR] 시도할 횟수는 1 이상의 정수여야 합니다.");
+  },
 };
 
 export default validator;

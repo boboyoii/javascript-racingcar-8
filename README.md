@@ -42,11 +42,12 @@
 
 ### Validator
 
-- [x] `validateCarNames(names)` : 자동차 이름이 올바르게 입력되었는지 확인하는 기능
+- [x] `validateCarNames(names)` : 자동차 이름이 올바르게 입력되었는지 검증하는 기능
 - [x] `isEmpty(names)` : 자동차 이름 중 비어 있는 값이 하나라도 있는지 확인하는 기능 (구분자 앞뒤가 비어 있는 경우 포함)
 - [x] `isInvalidLength(names)` : 자동차 이름 중 5자를 초과한 값이 있는지 확인하는 기능
 - [x] `hasWhitespace(names)` : 자동차 이름 중 공백 문자가 포함된 값이 있는지 확인하는 기능
-- [ ] `validateIsNumber()` : 입력된 시도 횟수가 양의 정수인지 검증하는 기능
+- [x] `validateRoundCount(count)` : 입력된 라운드 수가 올바른 값인지 검증하는 기능
+- [x] `isNotPositiveInteger(count)` : 1 이상의 정수가 아닌지 확인하는 기능
 
 ### GameView
 
