@@ -7,15 +7,22 @@ class GameManager {
   }
 
   async setup() {
-    const carNamesInput = await this.view.inputCarNames();
-    const carNames = carNamesInput.split(",");
-    validator.validateCarNames(carNames);
-    this.service.setCars(carNames);
+    const namesInput = await this.view.inputCarNames();
+    const names = namesInput.split(",");
+    validator.validateCarNames(names);
+    this.service.setCars(names);
 
-    const roundCountInput = await this.view.inputRoundCount();
-    const roundCount = Number(roundCountInput);
-    validator.validateRoundCount(roundCount);
-    this.service.setRoundCount(roundCount);
+    const countInput = await this.view.inputRoundCount();
+    const count = Number(countInput);
+    validator.validateRoundCount(count);
+    this.service.setRoundCount(count);
+  }
+
+  play() {
+    while (!this.service.isFinished()) {
+      const roundResult = this.service.playRound();
+      this.view.printRoundResult(roundResult);
+    }
   }
 }
 
