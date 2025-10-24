@@ -1,4 +1,4 @@
-import validator from "../model/validator.js";
+import { validator } from "../model/validator.js";
 
 class GameManager {
   constructor(view, service) {

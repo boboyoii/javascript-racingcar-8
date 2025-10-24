@@ -1,4 +1,6 @@
-const validator = {
+import { ERROR_MESSAGES } from "../constants/errorMessages.js";
+
+export const validator = {
   isEmpty(names) {
     return names.some((name) => name.length === 0);
   },
@@ -12,12 +14,10 @@ const validator = {
   },
 
   validateCarNames(names) {
-    if (this.isEmpty(names))
-      throw new Error("[ERROR] 이름이 비어 있습니다. (구분자 앞뒤 확인)");
+    if (this.isEmpty(names)) throw new Error(ERROR_MESSAGES.EMPTY_NAME);
     if (this.isInvalidLength(names))
-      throw new Error("[ERROR] 이름은 5자 이하만 가능합니다.");
-    if (this.hasWhitespace(names))
-      throw new Error("[ERROR] 이름에 공백이 포함될 수 없습니다.");
+      throw new Error(ERROR_MESSAGES.INVALID_LENGTH);
+    if (this.hasWhitespace(names)) throw new Error(ERROR_MESSAGES.WHITESPACE);
   },
 
   isNotPositiveInteger(count) {
@@ -26,8 +26,6 @@ const validator = {
 
   validateRoundCount(count) {
     if (this.isNotPositiveInteger(count))
-      throw new Error("[ERROR] 시도할 횟수는 1 이상의 정수여야 합니다.");
+      throw new Error(ERROR_MESSAGES.NOT_POSITIVE_INTEGER_COUNT);
   },
 };
-
-export default validator;
