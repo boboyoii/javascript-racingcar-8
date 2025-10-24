@@ -6,6 +6,12 @@ class GameManager {
     this.service = service;
   }
 
+  async start() {
+    await this.setup();
+    this.play();
+    this.showWinners();
+  }
+
   async setup() {
     const namesInput = await this.view.inputCarNames();
     const names = namesInput.split(",");
