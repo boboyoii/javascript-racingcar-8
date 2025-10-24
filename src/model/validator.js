@@ -21,11 +21,7 @@ const validator = {
   },
 
   isNotPositiveInteger(count) {
-    return (
-      Number.isNaN(count) ||
-      !Number.isInteger(Number(count)) ||
-      Number(count) <= 0
-    );
+    return Number.isNaN(count) || !Number.isInteger(count) || count <= 0;
   },
 
   validateRoundCount(count) {
