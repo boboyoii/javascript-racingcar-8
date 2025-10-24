@@ -17,7 +17,7 @@ class GameService {
   }
 
   isFinished() {
-    return this.totalRounds === this.currentRound;
+    return this.currentRound >= this.totalRounds;
   }
 
   playRound() {
