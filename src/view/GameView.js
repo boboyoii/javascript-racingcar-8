@@ -3,13 +3,11 @@ import { VIEW_MESSAGES } from "../constants/viewMessages.js";
 
 class GameView {
   async inputCarNames() {
-    const input = await Console.readLineAsync(VIEW_MESSAGES.INPUT.CAR_NAMES);
-    return input;
+    return Console.readLineAsync(VIEW_MESSAGES.INPUT.CAR_NAMES);
   }
 
   async inputRoundCount() {
-    const input = await Console.readLineAsync(VIEW_MESSAGES.INPUT.ROUND_COUNT);
-    return input;
+    return Console.readLineAsync(VIEW_MESSAGES.INPUT.ROUND_COUNT);
   }
 
   printRoundResult(roundResult) {
