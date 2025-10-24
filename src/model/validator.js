@@ -3,7 +3,7 @@ import { GAME_RULES } from "../constants/gameRules.js";
 
 export const validator = {
   isEmpty(names) {
-    return names.some((name) => name.length === 0);
+    return names.some((name) => name.trim().length === 0);
   },
 
   isInvalidLength(names) {
