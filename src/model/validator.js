@@ -1,4 +1,5 @@
 import { ERROR_MESSAGES } from "../constants/errorMessages.js";
+import { GAME_RULES } from "../constants/gameRules.js";
 
 export const validator = {
   isEmpty(names) {
@@ -6,7 +7,7 @@ export const validator = {
   },
 
   isInvalidLength(names) {
-    return names.some((name) => name.length > 5);
+    return names.some((name) => name.length > GAME_RULES.MAX_CAR_NAME_LENGTH);
   },
 
   hasWhitespace(names) {

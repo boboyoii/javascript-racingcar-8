@@ -1,3 +1,4 @@
+import { GAME_RULES } from "../constants/gameRules.js";
 import { validator } from "../model/validator.js";
 
 class GameManager {
@@ -14,7 +15,7 @@ class GameManager {
 
   async setup() {
     const namesInput = await this.view.inputCarNames();
-    const names = namesInput.split(",");
+    const names = namesInput.split(GAME_RULES.DELIMITER);
     validator.validateCarNames(names);
     this.service.setCars(names);
 

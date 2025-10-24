@@ -1,5 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
 import Car from "../model/Car.js";
+import { GAME_RULES } from "../constants/gameRules.js";
 
 class GameService {
   constructor() {
@@ -24,8 +25,7 @@ class GameService {
     this.currentRound += 1;
 
     this.cars.forEach((car) => {
-      const canAdvance = Random.pickNumberInRange(0, 9) >= 4;
-      if (canAdvance) {
+      if (this.canAdvance()) {
         car.advance();
       }
     });
@@ -34,6 +34,14 @@ class GameService {
       round: this.currentRound,
       cars: this.cars,
     };
+  }
+
+  canAdvance() {
+    const randomNumber = Random.pickNumberInRange(
+      GAME_RULES.RANDOM_MIN,
+      GAME_RULES.RANDOM_MAX
+    );
+    return randomNumber >= GAME_RULES.ADVANCE_THRESHOLD;
   }
 
   getWinners() {
