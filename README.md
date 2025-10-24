@@ -50,7 +50,7 @@
 
 ### GameView
 
-- [ ] `inputCarNames()` : 경주할 자동차 이름을 입력 받는 기능
+- [x] `inputCarNames()` : 경주할 자동차 이름을 입력 받는 기능
 - [ ] `inputRoundCount()` : 게임을 진행할 라운드 수를 입력 받는 기능
 - [ ] `printProgress()` : 각 라운드가 끝날 때마다 자동차들의 현재 위치를 출력하는 기능
 - [ ] `printWinners()` : 최종 우승자를 출력하는 기능
