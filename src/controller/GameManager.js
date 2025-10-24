@@ -24,6 +24,11 @@ class GameManager {
       this.view.printRoundResult(roundResult);
     }
   }
+
+  showWinners() {
+    const winners = this.service.getWinners();
+    this.view.printWinners(winners);
+  }
 }
 
 export default GameManager;

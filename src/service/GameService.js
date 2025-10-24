@@ -35,6 +35,16 @@ class GameService {
       cars: this.cars,
     };
   }
+
+  getWinners() {
+    const maxPosition = Math.max(...this.cars.map((car) => car.getPosition()));
+
+    const winners = this.cars
+      .filter((car) => car.getPosition() === maxPosition)
+      .map((car) => car.getName());
+
+    return winners;
+  }
 }
 
 export default GameService;

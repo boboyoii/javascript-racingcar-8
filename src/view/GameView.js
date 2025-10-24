@@ -22,6 +22,10 @@ class GameView {
     );
     Console.print(`${result.join("\n")}\n`);
   }
+
+  printWinners(winners) {
+    Console.print(`최종 우승자 : ${winners.join(", ")}`);
+  }
 }
 
 export default GameView;
