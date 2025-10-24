@@ -12,7 +12,11 @@ class GameService {
   }
 
   setRoundCount(count) {
-    this.totalRound = count;
+    this.totalRounds = count;
+  }
+
+  isFinished() {
+    return this.totalRounds === this.currentRound;
   }
 }
 
