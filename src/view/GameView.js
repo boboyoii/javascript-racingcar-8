@@ -1,21 +1,20 @@
 import { Console } from "@woowacourse/mission-utils";
+import { VIEW_MESSAGES } from "../constants/viewMessages.js";
 
 class GameView {
   async inputCarNames() {
-    const input = await Console.readLineAsync(
-      "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n"
-    );
+    const input = await Console.readLineAsync(VIEW_MESSAGES.INPUT.CAR_NAMES);
     return input;
   }
 
   async inputRoundCount() {
-    const input = await Console.readLineAsync("시도할 횟수는 몇 회인가요?\n");
+    const input = await Console.readLineAsync(VIEW_MESSAGES.INPUT.ROUND_COUNT);
     return input;
   }
 
   printRoundResult(roundResult) {
     const { round, cars } = roundResult;
-    if (round === 1) Console.print("\n실행결과");
+    if (round === 1) Console.print(VIEW_MESSAGES.OUTPUT.RESULT_HEADER);
 
     const result = cars.map(
       (car) => `${car.getName()} : ${"-".repeat(car.getPosition())}`
@@ -24,7 +23,7 @@ class GameView {
   }
 
   printWinners(winners) {
-    Console.print(`최종 우승자 : ${winners.join(", ")}`);
+    Console.print(VIEW_MESSAGES.OUTPUT.WINNER_ANNOUNCE(winners));
   }
 }
 
