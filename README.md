@@ -38,7 +38,7 @@
 ### Car
 
 - [x] `move()` : 자동차의 위치를 1 증가 시키는 기능
-- [ ] `getPosition()` : 자동차의 현재 위치를 반환하는 기능
+- [x] `getPosition()` : 자동차의 현재 위치를 반환하는 기능
 
 ### Validator
 

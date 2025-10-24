@@ -8,6 +8,10 @@ class Car {
   move() {
     this.#position += 1;
   }
+
+  getPosition() {
+    return this.#position;
+  }
 }
 
 export default Car;
