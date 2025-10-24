@@ -5,7 +5,7 @@ class Car {
     this.name = name;
   }
 
-  move() {
+  advance() {
     this.#position += 1;
   }
 

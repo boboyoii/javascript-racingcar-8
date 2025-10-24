@@ -1,3 +1,4 @@
+import { Random } from "@woowacourse/mission-utils";
 import Car from "../model/Car.js";
 
 class GameService {
@@ -17,6 +18,17 @@ class GameService {
 
   isFinished() {
     return this.totalRounds === this.currentRound;
+  }
+
+  playRound() {
+    this.currentRound += 1;
+
+    this.cars.forEach((car) => {
+      const canAdvance = Random.pickNumberInRange(0, 9) >= 4;
+      if (canAdvance) {
+        car.advance();
+      }
+    });
   }
 }
 
